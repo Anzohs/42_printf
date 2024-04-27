@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hladeiro <hladeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 19:16:57 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/12 14:17:20 by hladeiro         ###   ########.fr       */
+/*   Created: 2024/04/18 19:18:35 by hladeiro          #+#    #+#             */
+/*   Updated: 2024/04/18 19:18:36 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	int	i;
 
 	i = 0;
-	if (!little && big)
+	if (!little)
 		return ((char *) big);
 	return (find_c(big, little, len, i));
 }

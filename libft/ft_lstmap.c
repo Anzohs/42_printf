@@ -3,22 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hladeiro <hladeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 19:24:26 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/15 19:56:50 by hladeiro         ###   ########.fr       */
+/*   Created: 2024/04/18 19:15:28 by hladeiro          #+#    #+#             */
+/*   Updated: 2024/04/18 19:15:29 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_clean_list(t_list *list, void (*del)(void *))
+static t_list	*lst_new(void *content)
 {
-	while (list)
-	{
-		ft_lstclear(&list, del);
-	}
-	return (NULL);
+	t_list	*n_list;
+
+	if (!content)
+		return (NULL);
+	n_list = (t_list *)malloc(sizeof(*n_list));
+	if (!n_list)
+		return (NULL);
+	n_list->content = content;
+	n_list->next = NULL;
+	return (n_list);
+}
+
+static t_list	*ft_lst_last(t_list *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
+}
+
+static void	lstadd_last(t_list **lst, t_list *new)
+{
+	t_list	*new_list;
+
+	new_list = ft_lst_last(*lst);
+	if (!new_list)
+		*lst = new;
+	else
+		new_list->next = new;
 }
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
@@ -28,17 +53,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!lst || !f || !del)
 		return (NULL);
-	new_list = ft_lstnew(f(lst->content));
+	new_list = NULL;
 	if (!new_list)
-		return (NULL);
-	lst = lst->next;
+	{
+		new_list = lst_new(f(lst->content));
+		if (!new_list->content)
+			del(new_list->content);
+		lst = lst->next;
+	}
 	while (lst)
 	{
-		list_t = ft_lstnew(f(lst->content));
-		if(!list_t)
-			return (ft_clean_list(new_list, del));
-		ft_lstadd_back(&new_list, list_t);
-		ft_lstclear(&list_t, del);
+		list_t = lst_new(f(lst->content));
+		lstadd_last(&new_list, list_t);
 		lst = lst->next;
 	}
 	return (new_list);

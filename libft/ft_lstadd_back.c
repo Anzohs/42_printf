@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hladeiro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hladeiro <hladeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 16:18:58 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/15 19:56:16 by hladeiro         ###   ########.fr       */
+/*   Created: 2024/04/18 19:14:29 by hladeiro          #+#    #+#             */
+/*   Updated: 2024/04/18 19:14:30 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 static t_list	*ft_lst_last(t_list *lst)

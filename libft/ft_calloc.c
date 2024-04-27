@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hladeiro <hladeiro@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: hladeiro <hladeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 16:18:36 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/17 20:04:47 by hladeiro         ###   ########.fr       */
+/*   Created: 2024/04/18 19:12:32 by hladeiro          #+#    #+#             */
+/*   Updated: 2024/04/18 19:13:22 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
