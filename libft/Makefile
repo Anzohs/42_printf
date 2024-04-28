@@ -6,7 +6,7 @@
 #    By: hladeiro <hladeiro@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 19:11:05 by hladeiro          #+#    #+#              #
-#    Updated: 2024/04/23 17:58:31 by hladeiro         ###   ########.fr        #
+#    Updated: 2024/04/28 12:48:54 by hladeiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,10 +42,10 @@ bonus:			$(BONUS_OBJ)
 				ar rcs $(NAME) $(BONUS_OBJ)
 
 clean:
-				$(RM) $(OBJS)
+				$(RM) $(OBJS) $(BONUS_OBJ)
 
 fclean:			clean
-				$(RM) $(BONUS_OBJ)
+				$(RM) $(NAME)
 
 re:				fclean $(NAME) 
 
