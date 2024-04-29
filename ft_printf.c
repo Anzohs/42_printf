@@ -6,7 +6,7 @@
 /*   By: hladeiro <hladeiro@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:50:43 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/28 17:13:21 by hladeiro         ###   ########.fr       */
+/*   Updated: 2024/04/29 21:11:58 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,20 @@
 
 static int ft_write(char c, va_list *list)
 {
-    if (c == 'c' || c == '%')
+    if (c == 'c')
         return ft_printf_write(va_arg(*list, int));
     if (c == 's')
         return ft_write_string(va_arg(*list, char *));
     if (c == 'i'  || c == 'd')
         return (ft_putlong(va_arg(*list, int)));
+    if (c == '%')
+        return ft_printf_write('%');
+    if (c == 'x')
+        return ft_printf_bases(va_arg(*list, unsigned int), "0123456789abcdef");
+    if (c == 'X')
+        return ft_printf_bases(va_arg(*list, unsigned int), "0123456789ABCDEF");
+    if (c == 'u')
+        return (ft_putlong(va_arg(*list, unsigned int)));
     return (0);
 }
 
@@ -48,4 +56,10 @@ int ft_printf(const char *format, ...)
         format++;
     }
     return (result);
+}
+
+
+int main()
+{
+    ft_printf("%u", -1);
 }

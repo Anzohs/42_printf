@@ -6,14 +6,14 @@
 #    By: hladeiro <hladeiro@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/27 13:24:33 by hladeiro          #+#    #+#              #
-#    Updated: 2024/04/28 16:13:01 by hladeiro         ###   ########.fr        #
+#    Updated: 2024/04/29 21:16:47 by hladeiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 LIBFT = libft/libft.a
 lib = cd libft && make
 
-SRCS = ft_printf.c ft_printf_write.c
+SRCS = ft_printf.c ft_printf_write.c ft_printf_bases.c
 OBJS			= $(SRCS:.c=.o)
 
 CC				= cc
@@ -28,7 +28,7 @@ $(NAME):		$(OBJS)
 				$(lib) 
 				@cp $(LIBFT) .
 				@mv libft.a $(NAME)
-				ar rcs $(NAME) $(LIBFT) $(OBJS) 
+				ar rcs $(NAME) $(OBJS) 
 
 clean:
 				$(RM) $(OBJS) 
