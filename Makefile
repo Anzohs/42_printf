@@ -6,14 +6,16 @@
 #    By: hladeiro <hladeiro@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/27 13:24:33 by hladeiro          #+#    #+#              #
-#    Updated: 2024/04/29 21:16:47 by hladeiro         ###   ########.fr        #
+#    Updated: 2024/04/30 17:39:39 by hladeiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 LIBFT = libft/libft.a
 lib = cd libft && make
 
-SRCS = ft_printf.c ft_printf_write.c ft_printf_bases.c ft_printf_unint.c
+SRCS = ft_printf.c ft_printf_write.c ft_printf_bases.c ft_printf_unint.c\
+		ft_printf_adr.c
+
 OBJS			= $(SRCS:.c=.o)
 
 CC				= cc
