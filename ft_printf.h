@@ -23,6 +23,6 @@ int ft_leng_num(int c);
 int ft_printf_write(char c);
 int ft_putlong(int c);
 int ft_printf_bases(unsigned long c, char *bases);
-
+int	ft_printf_unint(unsigned int c);
 
 #endif

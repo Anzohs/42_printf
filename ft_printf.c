@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 static int ft_write(char c, va_list *list)
 {
@@ -27,7 +28,7 @@ static int ft_write(char c, va_list *list)
     if (c == 'X')
         return ft_printf_bases(va_arg(*list, unsigned int), "0123456789ABCDEF");
     if (c == 'u')
-        return (ft_putlong(va_arg(*list, unsigned int)));
+        return (ft_printf_unint(va_arg(*list, unsigned int)));
     return (0);
 }
 
@@ -58,8 +59,7 @@ int ft_printf(const char *format, ...)
     return (result);
 }
 
-
 int main()
 {
-    ft_printf("%u", -1);
+	ft_printf("%u \n", -1);
 }

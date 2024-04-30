@@ -13,7 +13,7 @@
 LIBFT = libft/libft.a
 lib = cd libft && make
 
-SRCS = ft_printf.c ft_printf_write.c ft_printf_bases.c
+SRCS = ft_printf.c ft_printf_write.c ft_printf_bases.c ft_printf_unint.c
 OBJS			= $(SRCS:.c=.o)
 
 CC				= cc

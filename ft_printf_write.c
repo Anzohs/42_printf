@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int ft_putlong(int c)
 {   
@@ -42,6 +43,7 @@ int ft_write_string(char *string)
     int i;
 
     i = 0;
+	printf("%s", string); 
     if (!string)
     {
         ft_putstr_fd("(null)", 1);
@@ -52,8 +54,8 @@ int ft_write_string(char *string)
     return (i);
 }
 
-int ft_printf_write(char c)
+int	ft_printf_write(char c)
 {
-    ft_putchar_fd(c, 1);
-    return (1);
+	ft_putchar_fd(c, 1);
+	return (1);
 }
